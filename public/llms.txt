@@ -2,7 +2,7 @@
 
 > Multiplayer payments for open-source projects and their agents. Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles, inside Discord or Telegram.
 
-Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. The Discord and Telegram apps are not public yet. The payment rails underneath are, and an agent can use them today.
+Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. Today Labr runs as two open-source, self-hosted bots: DiscoCentaur for Discord (https://github.com/justinquidli/discocentaur) and TeleCentaur for Telegram (https://github.com/justinquidli/telecentaur). Each runs on its owner's keys and wallet. DiscoCentaur can already score a GitHub repo's merged pull requests, post the split and pay contributors after the owner confirms. The payment rails underneath are open to any agent today.
 
 ## Set up (for agents)
 
@@ -19,3 +19,5 @@ Labr is in early access. It is built by the team behind Quidli and runs on Quidl
 
 - [Readme](https://labr.club/readme): why Labr exists, what we believe and what is live
 - [Quidli Connect MCP](https://github.com/Quidli/connect-mcp): setup options, tools and API keys
+- [DiscoCentaur](https://github.com/justinquidli/discocentaur): the Discord bot, self-host setup
+- [TeleCentaur](https://github.com/justinquidli/telecentaur): the Telegram bot, self-host setup
