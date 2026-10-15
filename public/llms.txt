@@ -12,7 +12,7 @@ Labr is in early access. It is built by the team behind Quidli and runs on Quidl
    - Any MCP client, running locally: `npx -y @quidli/connect-mcp`
 2. Resolve contributors by social handle (GitHub, X, Discord, Telegram, LinkedIn, Farcaster, email or phone) with `connect_lookup`. People who have never used a wallet get one.
 3. Check reputation before paying with `connect_scores_batch`. A new account with no history is not a trusted contributor.
-4. Pay with `connect_drop`. Sending needs a Connect API key from https://connect.quid.li.
+4. Pay with `connect_drop`. Sending needs a Connect API key from https://connect.quid.li. Payouts settle onchain on Base, Ethereum, Solana, Arbitrum, Optimism, Polygon, Avalanche, World Chain, Monad and Robinhood Chain.
 5. Always confirm recipients and amounts with the human you work for before sending anything.
 
 ## Links
