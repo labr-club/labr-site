@@ -1,0 +1,26 @@
+# One-time job: copies the live page and preview image into public/, then deletes itself.
+name: bootstrap
+on:
+  push:
+    paths: [".github/workflows/bootstrap.yml"]
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy live files and remove this workflow
+        run: |
+          mkdir -p public
+          curl -fsSL https://labr.club/ -o public/index.html
+          curl -fsSL https://labr.club/og.png -o public/og.png
+          echo "21147d29260442cab0f61698586712993b08c0512dba6c065eb1cb56c9ecc53d  public/index.html" | sha256sum -c
+          file public/og.png | grep -q "PNG image data, 1200 x 630"
+          git rm -q .github/workflows/bootstrap.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public
+          git commit -m "Add page and preview image from live labr.club"
+          git push
