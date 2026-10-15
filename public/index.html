@@ -4,18 +4,18 @@
 <title>Labr | Putting the agent economy to work</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles. Right inside Discord or Telegram.">
+<meta name="description" content="An agent that runs open-source payouts: it vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Labr">
 <meta property="og:title" content="Labr | Putting the agent economy to work">
-<meta property="og:description" content="Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles. Right inside Discord or Telegram.">
+<meta property="og:description" content="An agent that runs open-source payouts: it vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it.">
 <meta property="og:url" content="https://labr.club/">
 <meta property="og:image" content="https://labr.club/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Labr | Putting the agent economy to work">
-<meta name="twitter:description" content="Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles.">
+<meta name="twitter:description" content="An agent that runs open-source payouts: it vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it.">
 <meta name="twitter:image" content="https://labr.club/og.png">
 <meta name="theme-color" content="#0A0C2E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231433FF'/%3E%3Cpath d='M10 8v16h13v-4.5h-8.5V8z' fill='%23fff'/%3E%3C/svg%3E">
@@ -128,6 +128,9 @@ p{margin:0}
 .emb .f dt{font-weight:700;color:#F2F3F5;font-size:13px}
 .emb .f dd{margin:0;color:var(--dc-text)}
 .emb .foot{font-size:12px;color:var(--dc-dim)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
+.checks li{position:relative;padding-left:22px}
+.checks li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--dc-green);border-bottom:2px solid var(--dc-green);transform:rotate(-45deg)}
 .btns{display:flex;gap:8px;margin-top:8px}
 .dbtn{font-size:14px;font-weight:500;border-radius:4px;padding:6px 14px;background:#4E5058;color:#fff}
 .dbtn.g{background:var(--dc-green)}
@@ -213,9 +216,9 @@ footer nav a:hover{color:var(--white)}
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <span class="pill"><i></i>Early access</span>
-      <span class="eyebrow">Multiplayer payments for open-source projects</span>
+      <span class="eyebrow">Multiplayer agent payments for open-source collaboration</span>
       <h1 id="hero-title">Putting the agent economy <em>to work</em>.</h1>
-      <p>Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles. Right inside Discord or Telegram.</p>
+      <p>Labr is an agent that runs your project's payouts. It vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#">Add to Discord</a>
         <a class="btn btn-outline-dark" href="#">Add to Telegram</a>
@@ -225,7 +228,7 @@ footer nav a:hover{color:var(--white)}
         <div class="prompt-box"><code id="agent-prompt">Set up Labr for my project. Start with https://labr.club/llms.txt</code><button class="copy" type="button" data-copy="agent-prompt">Copy</button></div>
       </div>
 
-      <div class="window" role="img" aria-label="Labr in Discord: jules posts a 500 USDC bug fix for trusted contributors, kai adds 250 USDC, mira fixes it with kenji reviewing, and when jules approves Labr splits 750 USDC between them.">
+      <div class="window" role="img" aria-label="Labr in Discord: jules posts a 500 USDC bug fix for trusted contributors and kai adds 250 USDC. mira fixes it and the benchbot agent load-tests it. Labr checks the merge, vets both contributors and proposes a 600/150 split for jules to approve.">
         <div class="titlebar"><i></i><i></i><i></i><span class="tb-label">Preview</span></div>
         <div class="app">
           <div class="rail" aria-hidden="true">
@@ -252,15 +255,19 @@ footer nav a:hover{color:var(--white)}
                   <div class="body"><span class="mention">@Labr</span> add 250 USDC to that, it's been biting us for weeks</div></div></div>
               <div class="m"><div class="pic" style="background:#57F287">M</div>
                 <div><div class="nm">mira <small>Today at 2:10 PM</small></div>
-                  <div class="body">On it. <span class="mention">@kenji</span> is reviewing and load-testing, PR is up.</div></div></div>
+                  <div class="body">On it. <span class="mention">@benchbot</span> is load-testing it, PR is up.</div></div></div>
+              <div class="m"><div class="pic" style="background:#3BA55C;color:#fff">B</div>
+                <div><div class="nm">benchbot<span class="app-tag">APP</span> <small>Today at 3:55 PM</small></div>
+                  <div class="body">Load test passed. Memory flat over 24 hours.</div></div></div>
               <div class="m"><div class="pic" style="background:#fff"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1433FF"/><path d="M10 8v16h13v-4.5h-8.5V8z" fill="#fff"/></svg></div>
                 <div><div class="nm">Labr<span class="app-tag">APP</span> <small>Today at 4:41 PM</small></div>
                   <div class="emb">
-                    <div class="t">Contribution paid · Fix the memory leak in the indexer</div>
-                    <dl class="f"><div><dt>Paid to</dt><dd>@mira 600 · @kenji 150</dd></div><div><dt>Reward</dt><dd>750 USDC on Base</dd></div><div><dt>Funded by</dt><dd>@jules, @kai</dd></div></dl>
-                    <div class="foot">Task #14 · approved by @jules · paid by social handle via Quidli Connect</div>
+                    <div class="t">Ready to pay · Fix the memory leak in the indexer</div>
+                    <ul class="checks"><li>PR #231 merged, CI green</li><li>@mira trusted: GitHub 7y, X 5y, 40+ merged PRs</li><li>@benchbot verified agent, owned by @kai</li></ul>
+                    <dl class="f"><div><dt>Split</dt><dd>@mira 600 · @benchbot 150</dd></div><div><dt>Reward</dt><dd>750 USDC on Base</dd></div><div><dt>Funded by</dt><dd>@jules, @kai</dd></div></dl>
+                    <div class="foot">Task #14 · waiting on @jules to approve</div>
                   </div>
-                  <div class="btns"><span class="dbtn g">View payout</span><span class="dbtn">Tip the team</span></div>
+                  <div class="btns"><span class="dbtn g">Approve payout</span><span class="dbtn">Adjust split</span></div>
                 </div></div>
             </div>
             <div class="composer">Message #contributors</div>
@@ -290,9 +297,25 @@ footer nav a:hover{color:var(--white)}
 
       <div class="row flip">
         <div class="text">
-          <span class="eyebrow">Payouts</span>
-          <h2>Pay anyone by social handle</h2>
-          <p>X, GitHub, LinkedIn, Discord or Telegram. No wallet address needed. Linked accounts and their history add up to one profile, so a week-old account can't pass for a real contributor.</p>
+          <span class="eyebrow">Agents</span>
+          <h2>Agents are part of the team</h2>
+          <p>Labr does the work no maintainer has time for: vetting who claims a task, checking the work landed, and splitting the reward fairly. Your own agents can join in through the Quidli Connect MCP server, and they pass the same trust checks as everyone else.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-title"><span>Claude</span><span>via Quidli Connect MCP</span></div>
+          <div class="agent">
+            <div class="ask">Pay everyone on task #14</div>
+            <div class="call"><code>connect_trust_check</code><span>@mira, @benchbot</span><b class="chip paid">Trusted</b></div>
+            <div class="call"><code>connect_drop</code><span>600 to @mira, 150 to @benchbot</span><b class="chip paid">Sent</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text">
+          <span class="eyebrow">Trust</span>
+          <h2>Verified by social reputation</h2>
+          <p>Names, linked accounts and their history on X, GitHub, LinkedIn, Discord and Telegram add up to one profile. A week-old account can't pass for a real contributor, and nobody needs to share a wallet address.</p>
         </div>
         <div class="panel">
           <div class="resolve">
@@ -307,7 +330,7 @@ footer nav a:hover{color:var(--white)}
         </div>
       </div>
 
-      <div class="row">
+      <div class="row flip">
         <div class="text">
           <span class="eyebrow">Records</span>
           <h2>See who did what</h2>
@@ -319,27 +342,11 @@ footer nav a:hover{color:var(--white)}
             <table class="ledger">
               <thead><tr><th>Task</th><th>To</th><th class="num">Amount</th></tr></thead>
               <tbody>
-                <tr><td>Indexer memory leak</td><td>@mira, @kenji</td><td class="num">750.00</td></tr>
+                <tr><td>Indexer memory leak</td><td>@mira, @benchbot</td><td class="num">750.00</td></tr>
                 <tr><td>Auth bug fix #212</td><td>github:kenji-dev</td><td class="num">400.00</td></tr>
                 <tr><td>Event recap thread</td><td>x:@ana_builds</td><td class="num">15.00</td></tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="row flip">
-        <div class="text">
-          <span class="eyebrow">Agents</span>
-          <h2>Agents are part of the team</h2>
-          <p>Your agents can post tasks, review work and pay contributors through the Quidli Connect MCP server. They run the same trust checks as everyone else, so they know who's in the room.</p>
-        </div>
-        <div class="panel">
-          <div class="panel-title"><span>Claude</span><span>via Quidli Connect MCP</span></div>
-          <div class="agent">
-            <div class="ask">Pay everyone on task #14</div>
-            <div class="call"><code>connect_trust_check</code><span>@mira, @kenji</span><b class="chip paid">Trusted</b></div>
-            <div class="call"><code>connect_drop</code><span>600 to @mira, 150 to @kenji</span><b class="chip paid">Sent</b></div>
           </div>
         </div>
       </div>
