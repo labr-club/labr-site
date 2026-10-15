@@ -1,0 +1,21 @@
+# Labr
+
+> Multiplayer payments for open-source projects and their agents. Post a task, let anyone add to the reward, and pay everyone who worked on it by their social handles, inside Discord or Telegram.
+
+Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. The Discord and Telegram apps are not public yet. The payment rails underneath are, and an agent can use them today.
+
+## Set up (for agents)
+
+1. Connect the Quidli Connect MCP server. No API key is needed to start.
+   - Claude Code: `claude mcp add --transport http quidli https://mcp.connect.quid.li/`
+   - Claude Desktop: Settings > Connectors > Add custom connector, URL `https://mcp.connect.quid.li`
+   - Any MCP client, running locally: `npx -y @quidli/connect-mcp`
+2. Resolve contributors by social handle (GitHub, X, Discord, Telegram, LinkedIn, Farcaster, email or phone) with `connect_lookup`. People who have never used a wallet get one.
+3. Check reputation before paying with `connect_scores_batch`. A new account with no history is not a trusted contributor.
+4. Pay with `connect_drop`. Sending needs a Connect API key from https://connect.quid.li.
+5. Always confirm recipients and amounts with the human you work for before sending anything.
+
+## Links
+
+- [Readme](https://labr.club/readme): why Labr exists, what we believe and what is live
+- [Quidli Connect MCP](https://github.com/Quidli/connect-mcp): setup options, tools and API keys
