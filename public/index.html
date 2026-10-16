@@ -196,6 +196,22 @@ footer nav a:hover{color:var(--white)}
 .powered{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 .powered:hover{color:var(--white)}
 .powered .squid{flex:none}
+/* add-labr picker */
+button.btn{font-family:inherit;cursor:pointer}
+button.btn-outline-dark,button.btn-outline-light{background:transparent}
+dialog.picker{border:0;border-radius:16px;padding:0;width:min(440px, calc(100% - 32px));background:var(--white);color:var(--ink);box-shadow:0 24px 60px rgba(10,12,46,.35)}
+dialog.picker::backdrop{background:rgba(10,12,46,.62)}
+.picker .inner{padding:24px;display:grid;gap:16px}
+.picker header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.picker h2{font-size:20px;font-weight:800}
+.picker p{color:var(--muted);font-size:15px;margin-top:4px}
+.picker .x{border:0;background:none;font:inherit;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px;border-radius:6px}
+.picker .x:hover{color:var(--ink)}
+.picker .opt{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--edge);border-radius:12px;text-decoration:none;background:var(--wash);transition:border-color .15s ease}
+.picker .opt:hover{border-color:var(--blue)}
+.picker .opt strong{display:block;font-size:16px}
+.picker .opt span{display:block;color:var(--muted);font-size:14px}
+.picker .opt b{color:var(--blue);font-weight:600;font-size:14px;white-space:nowrap}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 </head>
@@ -211,8 +227,7 @@ footer nav a:hover{color:var(--white)}
       <a class="link" href="#features">Features</a>
       <a class="link" href="/readme">Readme</a>
       <a class="link" href="https://github.com/labr-club/labr-site" target="_blank" rel="noopener">GitHub</a>
-      <a class="link" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
-      <a class="btn btn-primary" href="https://github.com/justinquidli/discocentaur#setup" target="_blank" rel="noopener">Add to Discord</a>
+      <a class="btn btn-primary" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
     </nav>
   </div>
 </header>
@@ -225,8 +240,8 @@ footer nav a:hover{color:var(--white)}
       <h1 id="hero-title">Putting the agent economy <em>to work</em>.</h1>
       <p>Labr is an agent that runs your project's onchain payouts. It vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://github.com/justinquidli/discocentaur#setup" target="_blank" rel="noopener">Add to Discord</a>
-        <a class="btn btn-outline-dark" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener">Add to Telegram</a>
+        <a class="btn btn-primary" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
+        <button class="btn btn-outline-dark" type="button" data-open="add-labr" aria-haspopup="dialog">Add Labr to your project</button>
       </div>
       <div class="agent-prompt">
         <small>Or hand it to your agent</small>
@@ -364,9 +379,8 @@ footer nav a:hover{color:var(--white)}
       <h2 id="cta-title">Real contributions get paid.</h2>
       <p>No new app to move to. Labr works in the Discord and Telegram your project already uses.</p>
       <div class="cta-row">
-        <a class="btn btn-white" href="https://github.com/justinquidli/discocentaur#setup" target="_blank" rel="noopener">Add Labr to Discord</a>
-        <a class="btn btn-outline-light" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener">Add to Telegram</a>
-        <a class="btn btn-outline-light" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
+        <a class="btn btn-white" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
+        <button class="btn btn-outline-light" type="button" data-open="add-labr" aria-haspopup="dialog">Add Labr to your project</button>
       </div>
     </div>
   </section>
@@ -382,6 +396,20 @@ footer nav a:hover{color:var(--white)}
   </div>
 </footer>
 
+<dialog class="picker" id="add-labr" aria-labelledby="add-labr-title">
+  <div class="inner">
+    <header>
+      <div>
+        <h2 id="add-labr-title">Add Labr to your project</h2>
+        <p>Labr runs as an open-source bot on your own keys. Pick where your project lives.</p>
+      </div>
+      <button class="x" type="button" data-close aria-label="Close">&times;</button>
+    </header>
+    <a class="opt" href="https://github.com/justinquidli/discocentaur#setup" target="_blank" rel="noopener"><div><strong>Discord</strong><span>Set up the Discord bot</span></div><b>Setup guide &rarr;</b></a>
+    <a class="opt" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener"><div><strong>Telegram</strong><span>Set up the Telegram bot</span></div><b>Setup guide &rarr;</b></a>
+  </div>
+</dialog>
+
 <script>
 document.querySelectorAll('[data-copy]').forEach(function (b) {
   b.addEventListener('click', function () {
@@ -390,6 +418,15 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
     try { navigator.clipboard.writeText(t).then(done, function () {}); } catch (e) {}
   });
 });
+(function () {
+  var d = document.getElementById('add-labr');
+  if (!d || typeof d.showModal !== 'function') return;
+  document.querySelectorAll('[data-open="add-labr"]').forEach(function (b) {
+    b.addEventListener('click', function () { d.showModal(); });
+  });
+  d.querySelector('[data-close]').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+})();
 </script>
 
 </body>
