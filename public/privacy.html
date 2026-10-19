@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Labr | Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="What data Labr processes, why, and who it is shared with.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Labr">
+<meta property="og:title" content="Labr | Privacy Policy">
+<meta property="og:description" content="What data Labr processes, why, and who it is shared with.">
+<meta property="og:url" content="https://labr.club/privacy">
+<meta property="og:image" content="https://labr.club/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Labr | Privacy Policy">
+<meta name="twitter:description" content="What data Labr processes, why, and who it is shared with.">
+<meta name="twitter:image" content="https://labr.club/og.png">
+<meta name="theme-color" content="#0A0C2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231433FF'/%3E%3Cpath d='M10 8v16h13v-4.5h-8.5V8z' fill='%23fff'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: Slack-style centred hero (headline, line, buttons) over a full-width product window that looks like the real Discord client;
+   then three alternating feature rows and a blue CTA band. Quidli tokens: navy, blue, light-blue wash, white cards. */
+:root{
+  --navy:#0A0C2E;
+  --blue:#1433FF;
+  --blue-hi:#5C74FF;
+  --blue-soft:#E8ECFF;
+  --wash:#F4F6FF;
+  --white:#FFFFFF;
+  --ink:#0A0C2E;
+  --muted:#5D6280;
+  --edge:rgba(20,51,255,.10);
+  --ok:#12A150;
+  /* Discord client palette for the product window */
+  --dc-rail:#1E1F22; --dc-side:#2B2D31; --dc-main:#313338; --dc-hover:#3F4147; --dc-text:#DBDEE1; --dc-dim:#949BA4; --dc-blurple:#5865F2; --dc-green:#23A55A;
+  --sans:Inter, "Helvetica Neue", Arial, sans-serif;
+  --mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.025em}
+p{margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue)}
+:focus-visible{outline:3px solid #8EA0FF;outline-offset:3px;border-radius:8px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;padding:12px 20px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:background .15s ease, border-color .15s ease}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--blue);color:var(--white)}
+.btn-primary:hover{background:#0F28D6}
+.btn-outline-dark{border-color:rgba(255,255,255,.28);color:var(--white)}
+.btn-outline-dark:hover{border-color:rgba(255,255,255,.6)}
+.btn-white{background:var(--white);color:var(--blue)}
+.btn-white:hover{background:var(--blue-soft)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--navy);color:var(--white);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.02em}
+.brand svg{width:26px;height:26px}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:15px}
+.nav-links a{text-decoration:none}
+.nav-links .link{opacity:.8}
+.nav-links .link:hover{opacity:1}
+.nav .btn{padding:8px 14px;font-size:14px}
+@media (max-width:640px){.nav-links .link{display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;top:58%;width:1100px;height:520px;transform:translateX(-50%);background:radial-gradient(closest-side, rgba(20,51,255,.35), transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:72px 0;display:grid;justify-items:center;text-align:center;gap:20px}
+.hero .eyebrow{color:#8EA0FF}
+.hero h1{font-size:clamp(38px, 4.6vw, 60px);font-weight:800;line-height:1.05;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--blue-hi)}
+.hero p{font-size:clamp(17px, 1.5vw, 19px);color:#B8BCD9;max-width:58ch}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:6px}
+
+/* product window */
+.window{width:100%;max-width:1040px;margin-top:44px;margin-bottom:-120px;border-radius:12px;overflow:hidden;background:var(--dc-main);box-shadow:0 40px 80px rgba(3,4,20,.55), 0 0 0 1px rgba(255,255,255,.06);text-align:left;font-size:15px;color:var(--dc-text)}
+.titlebar{height:28px;background:var(--dc-rail);display:flex;align-items:center;gap:7px;padding:0 12px}
+.titlebar i{width:11px;height:11px;border-radius:50%;background:#45474D;display:block}
+.tb-label{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#80848E}
+.app{display:grid;grid-template-columns:64px 220px 1fr;min-height:430px}
+.rail{background:var(--dc-rail);display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:10px}
+.srv{width:44px;height:44px;border-radius:50%;background:var(--dc-main);display:grid;place-items:center;font-weight:700;font-size:15px;color:var(--dc-text)}
+.srv.on{border-radius:14px;background:var(--dc-blurple);color:#fff}
+.side{background:var(--dc-side);padding:12px 8px;display:grid;align-content:start;gap:2px}
+.side .server{font-weight:700;font-size:15px;padding:4px 8px 14px;border-bottom:1px solid #1F2023;margin-bottom:10px;color:#F2F3F5}
+.side .cat{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--dc-dim);padding:10px 8px 4px}
+.ch{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:4px;color:var(--dc-dim);font-weight:500}
+.ch b{font-weight:400;font-size:18px;line-height:1;color:#80848E}
+.ch.on{background:var(--dc-hover);color:#F2F3F5}
+.main{display:grid;grid-template-rows:auto 1fr auto;min-width:0}
+.chead{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid #26272B;font-weight:600;color:#F2F3F5}
+.chead b{font-weight:400;font-size:20px;color:#80848E}
+.chead span{font-weight:400;color:var(--dc-dim);font-size:14px;border-left:1px solid #3F4147;padding-left:10px;margin-left:4px}
+.feed{display:grid;align-content:end;gap:18px;padding:18px 16px}
+.m{display:grid;grid-template-columns:40px 1fr;gap:14px;min-width:0}
+.m .pic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#1E1F22}
+.m .nm{font-weight:600;color:#F2F3F5}
+.m .nm small{font-weight:500;font-size:12px;color:var(--dc-dim);margin-left:6px}
+.m .nm .app-tag{display:inline-block;background:var(--dc-blurple);color:#fff;font-size:10px;font-weight:700;border-radius:3px;padding:1px 4px;margin-left:6px;vertical-align:2px}
+.m .body{color:var(--dc-text);overflow-wrap:anywhere}
+.mention{background:rgba(88,101,242,.3);color:#C9CDFB;border-radius:3px;padding:0 2px;font-weight:500}
+.emb{margin-top:6px;max-width:520px;background:#2B2D31;border-left:4px solid var(--dc-green);border-radius:4px;padding:12px 14px;display:grid;gap:8px}
+.emb .t{font-weight:700;color:#F2F3F5}
+.emb .f{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 28px;font-size:14px;margin:0}
+.emb .f div{display:grid;gap:4px}
+@media (max-width:600px){.emb .f{grid-template-columns:1fr}}
+.emb .f dt{font-weight:700;color:#F2F3F5;font-size:13px}
+.emb .f dd{margin:0;color:var(--dc-text)}
+.emb .foot{font-size:12px;color:var(--dc-dim)}
+.btns{display:flex;gap:8px;margin-top:8px}
+.dbtn{font-size:14px;font-weight:500;border-radius:4px;padding:6px 14px;background:#4E5058;color:#fff}
+.dbtn.g{background:var(--dc-green)}
+.composer{margin:0 16px 18px;background:#383A40;border-radius:8px;padding:12px 14px;color:#6D6F78}
+@media (max-width:900px){.app{grid-template-columns:1fr}.rail,.side{display:none}.window{margin-bottom:-80px}}
+.hero-pad{height:0}
+
+/* features */
+.features{background:var(--wash)}
+.features .wrap{padding-block:200px 96px;display:grid;gap:88px}
+@media (max-width:900px){.features .wrap{padding-block:150px 72px;gap:64px}}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.row.flip .text{order:2}
+@media (max-width:900px){.row{grid-template-columns:1fr;gap:24px}.row.flip .text{order:0}}
+.text{display:grid;gap:12px;min-width:0}
+.text h2{font-size:clamp(28px, 3vw, 38px);font-weight:800;line-height:1.12}
+.text p{color:var(--muted);font-size:18px;max-width:40ch}
+
+.panel{background:var(--white);border:1px solid var(--edge);border-radius:16px;padding:22px;min-width:0;box-shadow:0 1px 2px rgba(10,12,46,.04), 0 12px 32px rgba(20,51,255,.06)}
+.panel-title{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:14px;display:flex;justify-content:space-between;gap:8px}
+.chip{font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.open{background:var(--blue-soft);color:var(--blue)}
+.chip.paid{background:#E3F6EA;color:var(--ok)}
+.list{display:grid;gap:10px}
+.item{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--edge);border-radius:10px;min-width:0}
+.item span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.item .amt{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.resolve{display:grid;gap:12px}
+.field{display:flex;align-items:center;gap:10px;border:1px solid var(--edge);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;min-width:0}
+.field .pf{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:3px 8px}
+.arrow{justify-self:center;color:var(--muted);font-size:13px}
+.result{display:grid;gap:8px;background:var(--wash);border-radius:10px;padding:14px}
+.kv{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.kv b{color:var(--ink);font-weight:500}
+.ledger{width:100%;border-collapse:collapse;font-size:14px}
+.ledger th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:0 8px 10px}
+.ledger td{padding:11px 8px;border-top:1px solid var(--edge);white-space:nowrap}
+.ledger .num{text-align:right;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.agent{display:grid;gap:10px}
+.ask{justify-self:end;background:var(--blue);color:var(--white);border-radius:12px 12px 4px 12px;padding:9px 14px;font-weight:500;font-size:15px}
+.call{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1px solid var(--edge);border-radius:10px;padding:11px 14px;font-size:14px;min-width:0}
+.call code{font-family:var(--mono);font-size:13px;color:var(--blue)}
+.call span{color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:520px){.call{grid-template-columns:1fr auto}.call span{grid-column:1/-1;grid-row:2;white-space:normal}}
+
+.cta{background:var(--blue);color:var(--white)}
+.cta .wrap{padding-block:80px;display:grid;justify-items:center;text-align:center;gap:22px}
+.cta h2{font-size:clamp(30px, 3.8vw, 46px);font-weight:800;line-height:1.1;max-width:20ch}
+
+footer{background:var(--navy);color:#8D92B8;font-size:14px}
+footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+footer .brand{color:var(--white);font-size:18px}
+footer nav{display:flex;gap:20px}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--white)}
+.foot-left{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px}
+.powered{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.powered:hover{color:var(--white)}
+.powered .squid{flex:none}
+.doc{background:var(--white)}
+.doc .wrap{max-width:720px;padding-block:72px 96px}
+.doc h1{font-size:clamp(34px,4vw,44px);font-weight:800;line-height:1.1;margin-bottom:16px}
+.doc .lede{font-size:20px;color:var(--ink);margin-bottom:8px}
+.doc h2{font-size:22px;font-weight:800;margin:44px 0 12px}
+.doc p,.doc li{color:var(--muted);font-size:17px}
+.doc p+p{margin-top:14px}
+.doc ul{margin:0;padding-left:20px;display:grid;gap:10px}
+.doc li strong,.doc p strong{color:var(--ink);font-weight:600}
+.doc p a{color:var(--blue)}
+.doc .note{margin-top:44px;padding-top:20px;border-top:1px solid var(--edge);font-size:14px}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Labr home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1433FF"/><path d="M10 8v16h13v-4.5h-8.5V8z" fill="#fff"/></svg>
+      Labr
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="link" href="/#features">Features</a>
+      <a class="link" href="/readme">Readme</a>
+      <a class="link" href="https://github.com/labr-club/labr-site" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <article class="wrap">
+    <span class="eyebrow">Privacy</span>
+    <h1>Privacy Policy</h1>
+    <p class="lede">What data Labr processes and why. Last updated 19 October 2026.</p>
+
+    <h2>Who we are</h2>
+    <p>Labr is operated by Quidli ("we"), which is responsible for the data described here. This policy covers the Labr bot on Discord and Telegram and the website labr.club.</p>
+
+    <h2>What we process</h2>
+    <ul>
+      <li><strong>Account identifiers:</strong> your Discord or Telegram user ID, username and display name, and the server and channel where you use Labr.</li>
+      <li><strong>Messages to Labr:</strong> messages that mention or reply to Labr, plus recent messages in that conversation for context. Labr keeps up to the last 40 messages per conversation in memory to answer you; they are cleared when the bot restarts.</li>
+      <li><strong>Keys you link:</strong> API keys you choose to connect, stored encrypted (AES-256-GCM) with your user ID.</li>
+      <li><strong>Things you set up:</strong> scheduled payouts and watchers you create.</li>
+      <li><strong>Payout details:</strong> recipients' social handles, wallet addresses, amounts and transaction IDs.</li>
+      <li><strong>Operational logs:</strong> technical logs on our server, used to run and fix the bot.</li>
+    </ul>
+
+    <h2>Why</h2>
+    <p>We use this data only to provide Labr: to answer your requests, look people up, check reputation, and send the payouts you ask for. We do not sell data and do not use it for advertising.</p>
+
+    <h2>Who we share it with</h2>
+    <ul>
+      <li><strong>AI providers</strong> (Anthropic by default; Google, OpenAI or Nous Portal if selected) receive the conversation needed to answer you.</li>
+      <li><strong>Quidli Connect</strong> receives the handles and amounts needed to look people up, score reputation and send payouts.</li>
+      <li><strong>Brave Search</strong> receives search queries when Labr searches the web.</li>
+      <li><strong>Discord and Telegram</strong> carry the messages, under their own privacy policies.</li>
+    </ul>
+
+    <h2>Onchain data is public</h2>
+    <p>Payouts are recorded on public blockchains. Wallet addresses, amounts and transactions are visible to anyone and cannot be deleted by us or anyone else.</p>
+
+    <h2>How long we keep it</h2>
+    <p>Conversation context stays in memory until the bot restarts. Linked keys, scheduled payouts and watchers stay until you remove them or ask us to. Logs are kept for a limited time for troubleshooting.</p>
+
+    <h2>Your rights</h2>
+    <p>You can ask to access, correct or delete your data, or object to how we use it, by emailing <a href="mailto:labr@quid.li">labr@quid.li</a>. If you are in the EU, you can also complain to your data protection authority (in France, the CNIL).</p>
+
+    <h2>The website</h2>
+    <p>labr.club uses no cookies and no analytics. Our host, Cloudflare, processes standard request data such as IP addresses to serve the site.</p>
+
+    <h2>Age</h2>
+    <p>You must meet Discord's or Telegram's minimum age to use Labr.</p>
+
+    <h2>Changes and contact</h2>
+    <p>We may update this policy; the date above shows the latest version. Questions: <a href="mailto:labr@quid.li">labr@quid.li</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-left">
+      <a class="brand" href="/" aria-label="Labr home">Labr</a>
+      <a class="powered" href="https://quidli.xyz" target="_blank" rel="noopener">Powered by <svg class="squid" viewBox="0 0 51 50" width="16" height="16" aria-hidden="true"><path fill="#0064FF" d="M28.6,1.1 L28.8,1.2 L29.3,1.5 L29.5,1.6 L30,1.9 L31.2,2.6 L31.4,2.7 L32.2,3.2 L32.6,3.4 L33.3,3.7 L33.7,4 L36.8,5.5 L37.6,5.9 L37.9,6.1 L38.7,6.5 L39.1,6.7 L39.7,7.1 L40.1,7.3 L40.7,7.7 L41.2,8 L41.6,8.2 L41.6,8.2 L41.8,8.4 C42.2,8.7 42.5,8.9 42.8,9.2 L43,9.3 C43.3,9.6 43.6,9.8 43.8,10 L44,10.2 C46.2,12.3 45.7,15.5 43.2,17.3 C42.8,17.6 42.5,17.8 42.1,18 L41.8,18.1 L40.9,18.6 L41.6,19.4 L42.1,20.1 L42.5,20.6 L42.6,20.8 C43.5,22 44.2,23 44.7,24.1 C44.7,24.3 44.8,24.4 44.9,24.6 L45,24.8 C45.9,27.3 45.3,29.3 42.8,30.4 L42.7,30.5 L42.4,30.6 L42.2,30.6 L41.9,30.7 L41.5,30.8 L40.8,30.9 L40.8,45.5 L40.8,45.5 C42.7,45.1 44.2,43.8 45.5,41.6 L45.7,41.3 L46.3,40.3 L46.4,40.2 C47.3,38.7 48.2,38.1 49.4,38.6 C50.8,39.1 51,40.6 50.4,42.3 L50.3,42.4 C49.3,45.1 47.3,47.5 44.9,48.9 C41.6,50.9 37.5,50.2 36.6,46.8 C36.4,45.9 36.3,45 36.3,43.9 L36.3,43.5 L36.3,42.9 L36.4,42 L36.4,41.4 L36.4,41.1 L36.4,30.9 L31.4,30.9 L31.4,43.4 L31.4,44.2 L31.4,44.5 L31.4,44.8 C31.3,46.4 30.8,47.4 29.5,47.5 C28.4,47.7 27.7,47.2 27.4,46.2 C27.2,45.6 27.1,44.9 27.1,44 L27,42.6 L27,40.5 L27,39.7 L27.1,30.9 L22.1,30.9 L22.1,41.1 L22.1,41.4 L22.1,41.9 L22.1,42.3 L22.1,42.5 C22.1,43.8 21.8,44.6 20.9,44.9 C19.3,45.7 18,44.3 17.7,42.4 L17.7,41.8 L17.7,41.8 L17.6,41.3 L17.6,40.8 L17.5,40.3 L17.5,39.6 L17.5,39.3 L17.5,38.6 L17.5,38.2 L17.5,37.5 L17.5,36.8 L17.6,35.9 L17.7,32.9 L17.7,32.2 L17.7,31.6 L17.7,30.9 L14.4,30.9 L14.4,42.6 L14.5,44 L14.5,44.2 L14.5,44.7 C14.4,46.1 14.2,47.1 13.7,48 C12.8,49.8 11,50.2 8.7,49.7 L8.5,49.7 L8.2,49.6 L8.2,49.6 L7.7,49.5 C6.7,49.2 5.9,48.8 5,48.3 L4.7,48.1 C2.6,46.8 0.9,44.8 0.2,42.5 L0.2,42.4 C-0.3,40.9 0,39.4 1.3,38.9 C2.5,38.5 3.4,39 4.3,40.5 L4.4,40.6 L4.5,40.8 L4.5,40.8 L4.7,41.1 L5.2,41.9 L5.3,42.1 L5.4,42.3 L5.5,42.4 L5.6,42.6 C6.7,43.9 7.9,44.6 9.8,45.3 L10.1,45.4 L10.1,30.9 L9.4,30.9 L9.1,30.9 L9.1,30.9 L8.9,30.8 L8.5,30.8 L8.4,30.8 C8.1,30.8 7.8,30.7 7.6,30.7 L7.3,30.6 C3.8,29.5 3.2,27.1 4.8,23.9 C5.3,22.9 5.9,21.9 6.7,20.8 L7,20.6 L7.4,20 L7.6,19.7 L8.1,19.1 L8.6,18.6 L8.6,18.5 C6.9,17.9 5.5,16.8 4.7,15.5 L4.5,15.3 C3.5,13.6 3.8,11.8 5.5,10.2 L5.7,10 L5.7,10 L5.9,9.8 C6.5,9.3 7.1,8.8 7.8,8.3 L8,8.1 C8.3,8 8.6,7.8 8.9,7.6 L9.3,7.3 L9.6,7.2 L10.2,6.8 L10.9,6.4 L11.2,6.2 L12,5.8 L12.5,5.6 L13.3,5.2 L17.2,3.2 L17.8,3 L18.2,2.7 L18.6,2.5 L19.2,2.2 L19.5,2 L20.4,1.5 L20.9,1.3 L21.3,1.1 L21.5,0.9 C22.8,0.3 23.7,0 24.7,0 L24.8,0 C26,-0 27.1,0.3 28.6,1.1 Z M23,7 L22.9,7.1 L14.8,17.8 L14.6,18.1 L14.3,18.5 L13.9,18.9 L13.5,19.5 L13.1,20 L12.7,20.6 L12.3,21.2 L11.7,22.1 L10.9,23.2 L10.4,23.9 L9.3,25.6 C9.2,25.7 9.2,25.8 9.2,25.9 C9.2,26.2 9.4,26.4 9.7,26.5 L39.8,26.5 C39.9,26.5 40,26.4 40.1,26.4 C40.3,26.2 40.4,25.8 40.2,25.6 L38.1,22.5 L36.1,19.8 L34.3,17.3 L33.2,15.7 L32.2,14.3 L30.8,12.6 L28,8.8 L26.7,7.1 C26.6,6.9 26.4,6.8 26.3,6.7 C25.2,5.9 23.8,6 23,7 Z M20.7,25.2 C18.8,25.6 17.3,24.5 17,22.7 C16.8,21 17.7,19.5 19.5,19.1 L19.7,19.1 C23.5,18.6 24.5,24.3 20.7,25.2 Z M32.2,21.1 C32.8,22.7 32.2,24.4 30.5,25 C28.7,25.8 27.1,24.9 26.5,23.2 C25.9,21.5 26.6,19.8 28.3,19.2 C30.2,18.7 31.7,19.6 32.2,21.1 Z M15.4,9.5 L14.9,9.8 L14.3,10.2 L13.6,10.6 L12.9,11 L11.6,11.7 L10.8,12.1 L9.4,13 L8.7,13.3 L8.7,13.3 C9.4,13.9 10.1,14.4 11.1,14.9 L11.5,15.1 L11.7,14.8 L12.1,14.3 L13.3,12.9 L13.7,12.4 L13.9,12 L14.2,11.7 L14.2,11.7 L14.3,11.5 C14.6,11.1 14.8,10.8 14.9,10.5 L15,10.3 C15.1,10.2 15.2,10 15.3,9.8 L15.4,9.5 Z M34.4,9.9 L37.6,14.7 L37.7,14.7 C38.6,14.5 39.4,14.2 40.4,13.7 L40.5,13.6 L40.4,13.6 C38.9,12.1 36.8,10.8 34.6,10 L34.4,9.9 Z"/></svg> Quidli Connect</a>
+    </div>
+    <nav aria-label="Footer"><a href="/readme">Readme</a><a href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Discord</a><a href="https://github.com/labr-club" target="_blank" rel="noopener">GitHub</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
+  </div>
+</footer>
+
+</body>
+</html>
