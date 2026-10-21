@@ -4,6 +4,8 @@
 
 Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. Today Labr runs as two open-source, self-hosted bots: DiscoCentaur for Discord (https://github.com/justinquidli/discocentaur) and TeleCentaur for Telegram (https://github.com/justinquidli/telecentaur). Each runs on its owner's keys and wallet. DiscoCentaur can already score a GitHub repo's merged pull requests, post the split and pay contributors after the owner confirms. The payment rails underneath are open to any agent today.
 
+Fees: Labr charges no platform fee during early access. The sender pays only network gas, and recipients get the full amount.
+
 ## Set up (for agents)
 
 1. Connect the Quidli Connect MCP server. No API key is needed to start.

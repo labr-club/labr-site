@@ -84,12 +84,22 @@ p{margin:0}
 .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:6px}
 .pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#C9D1FF;border:1px solid rgba(142,160,255,.35);border-radius:999px;padding:5px 12px;margin-bottom:-4px}
 .pill i{width:6px;height:6px;border-radius:50%;background:#3DDC84;display:block}
-.agent-prompt{display:grid;gap:8px;justify-items:center;margin-top:4px;width:100%;max-width:560px}
+.agent-prompt{display:grid;gap:8px;justify-items:center;margin-top:8px;width:100%;max-width:560px}
 .agent-prompt small{font-size:13px;color:#8D92B8}
 .prompt-box{display:flex;align-items:center;gap:12px;width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 10px 10px 16px;text-align:left}
 .prompt-box code{flex:1;min-width:0;font-family:var(--mono);font-size:13px;color:#DDE2FF;overflow-wrap:anywhere}
 .copy{flex:none;font:600 13px var(--sans);color:var(--white);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:6px 12px;cursor:pointer}
 .copy:hover{background:rgba(255,255,255,.18)}
+.fee{width:100%;max-width:780px;margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1.15fr;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.04);text-align:left;overflow:hidden}
+.fee>div{padding:14px 18px;display:grid;gap:3px;align-content:center}
+.fee>div+div{border-left:1px solid rgba(255,255,255,.1)}
+.fee small{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#8D92B8}
+.fee b{font-size:20px;font-weight:700;color:var(--white);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.fee span{font-size:13px;color:#B8BCD9}
+.fee .them b{color:#B8BCD9}
+.fee .us{background:rgba(20,51,255,.2)}
+.fee .us span em{font-style:normal;color:#3DDC84;font-weight:600}
+@media (max-width:640px){.fee{grid-template-columns:1fr}.fee>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
 .btn-outline-light{border-color:rgba(255,255,255,.6);color:var(--white)}
 .btn-outline-light:hover{border-color:var(--white)}
 
@@ -247,6 +257,11 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
       <div class="cta-row">
         <a class="btn btn-primary" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
         <button class="btn btn-outline-dark" type="button" data-open="add-labr" aria-haspopup="dialog">Add Labr to your project</button>
+      </div>
+      <div class="fee" role="group" aria-label="What a 750 USDC bounty costs">
+        <div><small>The bounty</small><b>750 USDC</b><span>@mira 600 · kai's bot 150</span></div>
+        <div class="them"><small>On a 9% bounty platform</small><b>You pay 817.50</b><span>67.50 goes to the platform</span></div>
+        <div class="us"><small>On Labr · early access</small><b>You pay 750</b><span><em>No platform fee</em>, just network gas</span></div>
       </div>
       <div class="agent-prompt">
         <small>Or hand it to your agent</small>
