@@ -411,7 +411,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
           <tbody>
             <tr><th>Pays people and agents in one split</th><td>No payouts</td><td>People only</td><td class="us">Yes</td></tr>
             <tr><th>Pays in any token, including your own</th><td>No</td><td>Fiat only</td><td class="us">Yes, on 10 chains</td></tr>
-            <tr><th>Fee on every reward</th><td>n/a</td><td>9%</td><td class="us">0% in early access</td></tr>
+            <tr><th>Fee on every reward</th><td>n/a</td><td>9%</td><td class="us">0%. You only pay network gas</td></tr>
             <tr><th>What a recipient needs</th><td>n/a</td><td>An account and a bank</td><td class="us">A GitHub, X, Discord or Telegram handle</td></tr>
             <tr><th>Payout record</th><td>n/a</td><td>Private, on the platform</td><td class="us">Public and verifiable onchain</td></tr>
           </tbody>
@@ -581,7 +581,7 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
     document.getElementById('o-labr').textContent = 'You pay ' + fmt(a) + ' ' + sym;
     var l = [li('ok', 'Person gets ' + fmt(person) + ' ' + sym)];
     if (p > 0) l.push(li('ok', 'Agent gets ' + fmt(agent) + ' ' + sym));
-    l.push(li('ok', 'Paid by handle on ' + chain + ', no fee in early access'));
+    l.push(li('ok', chain === 'Base' ? 'Labr takes 0%. Gas is sponsored on Base' : 'Labr takes 0%. You only pay network gas'));
     l.push(li('ok', 'Public receipt in #payouts'));
     fill('o-labr-list', l);
   }
