@@ -138,6 +138,59 @@ p{margin:0}
 @media (max-width:900px){.app{grid-template-columns:1fr}.rail,.side{display:none}.window{margin-bottom:-80px}}
 .hero-pad{height:0}
 
+/* compare */
+.compare{background:var(--white)}
+.compare .wrap{padding-block:200px 96px;display:grid;gap:40px}
+@media (max-width:900px){.compare .wrap{padding-block:150px 72px;gap:32px}}
+.c-head{display:grid;gap:12px;max-width:760px}
+.c-head h2{font-size:clamp(28px, 3vw, 38px);font-weight:800;line-height:1.12}
+.c-head p{color:var(--muted);font-size:18px}
+.calc{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--edge);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(10,12,46,.04), 0 12px 32px rgba(20,51,255,.06)}
+.calc-in{background:var(--wash);padding:24px;display:grid;gap:18px;align-content:start;min-width:0}
+.calc-in>*,.calc-in label,.calc-in fieldset{min-width:0}
+.calc-in input{box-sizing:border-box;max-width:100%}
+.lab-row{display:flex;justify-content:space-between;gap:8px}
+.calc-in h3{font-size:18px;font-weight:700}
+.calc-in label{display:grid;gap:8px;font-size:14px;font-weight:600;color:var(--ink)}
+.calc-in fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+.calc-in legend{font-size:14px;font-weight:600;padding:0;margin-bottom:8px}
+.amount{display:flex;align-items:center;background:var(--white);border:1px solid var(--edge);border-radius:10px;padding:0 12px}
+.amount input{flex:1;min-width:0;width:100%;border:0;background:none;font:700 20px var(--sans);color:var(--ink);padding:10px 0;font-variant-numeric:tabular-nums}
+.amount input:focus{outline:none}
+.amount:focus-within{border-color:var(--blue)}
+.amount b{font-size:14px;color:var(--muted);font-weight:600}
+.tokens{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tokens label{display:block;font-weight:500}
+.tokens input{position:absolute;opacity:0;pointer-events:none}
+.tokens span{display:block;text-align:center;padding:9px 6px;border:1px solid var(--edge);border-radius:8px;background:var(--white);cursor:pointer;font-size:14px}
+.tokens input:checked + span{border-color:var(--blue);background:var(--blue-soft);color:var(--blue);font-weight:600}
+.tokens input:focus-visible + span{outline:3px solid #8EA0FF;outline-offset:2px}
+.own{width:100%;border:1px solid var(--edge);border-radius:8px;padding:9px 10px;font:600 14px var(--mono);text-transform:uppercase}
+.calc-in output{color:var(--blue);font-variant-numeric:tabular-nums}
+.calc-in input[type=range]{width:100%;accent-color:var(--blue)}
+.calc-note{font-size:13px;color:var(--muted)}
+.calc-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-width:0}
+.opt-col{padding:24px;display:grid;gap:10px;align-content:start;border-left:1px solid var(--edge);min-width:0}
+.opt-col small{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.opt-col .big{font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.opt-col .muted-b{color:#A2A6BF}
+.opt-col.us{background:linear-gradient(180deg, rgba(20,51,255,.06), rgba(20,51,255,.02))}
+.opt-col.us small{color:var(--blue)}
+.opt-col ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;color:var(--ink)}
+.opt-col li{position:relative;padding-left:22px}
+.opt-col li::before{position:absolute;left:0;top:0;font-weight:700}
+.opt-col li.ok::before{content:"✓";color:var(--ok)}
+.opt-col li.no{color:var(--muted)}
+.opt-col li.no::before{content:"✕";color:#C2410C}
+@media (max-width:960px){.calc{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.opt-col{border-left:0;border-top:1px solid var(--edge)}}
+.cmp{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+.cmp th,.cmp td{text-align:left;padding:14px 12px;border-top:1px solid var(--edge);vertical-align:top}
+.cmp thead th{border-top:0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cmp tbody th{font-weight:600;color:var(--ink);width:30%}
+.cmp td{color:var(--muted)}
+.cmp .us{color:var(--ink);font-weight:600;background:rgba(20,51,255,.04)}
+.cmp thead .us{color:var(--blue)}
+.compare + .features .wrap{padding-block:96px}
 /* features */
 .features{background:var(--wash)}
 .features .wrap{padding-block:200px 96px;display:grid;gap:88px}
@@ -234,6 +287,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
       Labr
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a class="link" href="#compare">Compare</a>
       <a class="link" href="#features">Features</a>
       <a class="link" href="/readme">Readme</a>
       <a class="link" href="https://github.com/labr-club/labr-site" target="_blank" rel="noopener">GitHub</a>
@@ -247,7 +301,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
     <div class="wrap">
       <span class="eyebrow">Multiplayer agent payments for open-source collaboration</span>
       <h1 id="hero-title">Putting the agent economy <em>to work</em>.</h1>
-      <p>Labr is an agent that pays the people and agents behind your open-source project. It vets contributors, checks the work and splits the reward onchain, without a 9% platform cut.</p>
+      <p>Labr is an agent that pays the people and agents behind your open-source project. It vets contributors, checks the work and splits the reward onchain, in any token, including your own.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener">Join the Discord</a>
         <button class="btn btn-outline-dark" type="button" data-open="add-labr" aria-haspopup="dialog">Add Labr to your project</button>
@@ -302,23 +356,72 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
     </div>
   </section>
 
-  <section class="features" id="features" aria-label="Features">
+  <section class="compare" id="compare" aria-labelledby="compare-title">
     <div class="wrap">
-      <div class="row flip">
-        <div class="text">
-          <span class="eyebrow">Pricing</span>
-          <h2>Keep the 9%</h2>
-          <p>Platforms that pay contributors through banks add a service fee to every reward. Labr pays out onchain, so a 750 USDC task costs you 750 USDC plus network gas. No platform fee during early access.</p>
+      <div class="c-head">
+        <span class="eyebrow">How Labr compares</span>
+        <h2 id="compare-title">Chat tools coordinate the work. Labr pays for it.</h2>
+        <p>Workspaces for people and agents keep the conversation in one place, but the money still happens somewhere else. Task platforms pay through banks: fiat only, people only, and a fee on every reward. Labr pays everyone who did the work, onchain, in the token you choose.</p>
+      </div>
+
+      <div class="calc" role="group" aria-labelledby="calc-title">
+        <div class="calc-in">
+          <h3 id="calc-title">Pay for a task</h3>
+          <label>Reward
+            <span class="amount"><input id="c-amt" type="number" inputmode="decimal" min="0" step="any" value="750" aria-label="Reward amount"><b id="c-unit">USDC</b></span>
+          </label>
+          <fieldset>
+            <legend>Paid in</legend>
+            <div class="tokens">
+              <label><input type="radio" name="c-tok" value="USDC" checked><span>USDC</span></label>
+              <label><input type="radio" name="c-tok" value="ETH"><span>ETH</span></label>
+              <label><input type="radio" name="c-tok" value="SOL"><span>SOL</span></label>
+              <label><input type="radio" name="c-tok" value="own"><span>Your token</span></label>
+            </div>
+            <input id="c-own" class="own" type="text" maxlength="10" value="YOURS" aria-label="Your token's ticker" hidden>
+          </fieldset>
+          <label><span class="lab-row"><span>Agent's share of the work</span><output id="c-pct-out">20%</output></span>
+            <input id="c-pct" type="range" min="0" max="80" step="5" value="20">
+          </label>
+          <p class="calc-note">A person did the rest. Agents and people are paid in the same split.</p>
         </div>
-        <div class="panel">
-          <div class="panel-title"><span>What a 750 USDC task costs you</span><span>on Base</span></div>
-          <div class="list costs">
-            <div class="item"><span>Platform at 9%</span><b class="amt">817.50 USDC</b><span class="chip muted">67.50 fee</span></div>
-            <div class="item"><span>Labr</span><b class="amt">750.00 USDC</b><span class="chip paid">No fee</span></div>
+
+        <div class="calc-out">
+          <div class="opt-col">
+            <small>Team chat for people and agents</small>
+            <b class="big muted-b">No payouts</b>
+            <ul><li class="no">Pays nobody: payouts happen in another tool</li><li class="ok">Agents are members</li></ul>
+          </div>
+          <div class="opt-col">
+            <small>Task platform paying through banks</small>
+            <b class="big" id="o-bank">You pay 817.50 USDC</b>
+            <ul id="o-bank-list"></ul>
+          </div>
+          <div class="opt-col us">
+            <small>Labr</small>
+            <b class="big" id="o-labr">You pay 750.00 USDC</b>
+            <ul id="o-labr-list"></ul>
           </div>
         </div>
       </div>
 
+      <div class="scroll">
+        <table class="cmp">
+          <thead><tr><th></th><th>Team chat</th><th>Bank-paid task platform</th><th class="us">Labr</th></tr></thead>
+          <tbody>
+            <tr><th>Pays people and agents in one split</th><td>No payouts</td><td>People only</td><td class="us">Yes</td></tr>
+            <tr><th>Pays in any token, including your own</th><td>No</td><td>Fiat only</td><td class="us">Yes, on 10 chains</td></tr>
+            <tr><th>Fee on every reward</th><td>n/a</td><td>9%</td><td class="us">0% in early access</td></tr>
+            <tr><th>What a recipient needs</th><td>n/a</td><td>An account and a bank</td><td class="us">A GitHub, X, Discord or Telegram handle</td></tr>
+            <tr><th>Payout record</th><td>n/a</td><td>Private, on the platform</td><td class="us">Public and verifiable onchain</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-label="Features">
+    <div class="wrap">
       <div class="row">
         <div class="text">
           <span class="eyebrow">Tasks</span>
@@ -442,6 +545,50 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
     try { navigator.clipboard.writeText(t).then(done, function () {}); } catch (e) {}
   });
 });
+(function () {
+  var amt = document.getElementById('c-amt');
+  if (!amt) return;
+  var pct = document.getElementById('c-pct'), pctOut = document.getElementById('c-pct-out');
+  var own = document.getElementById('c-own'), unit = document.getElementById('c-unit');
+  var CHAIN = { USDC: 'Base', ETH: 'Base', SOL: 'Solana' };
+  function fmt(n) {
+    var d = n >= 1000 ? 0 : n >= 1 ? 2 : 6;
+    return n.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: n >= 1 && n < 1000 ? 2 : 0 });
+  }
+  function li(cls, text) { var l = document.createElement('li'); l.className = cls; l.textContent = text; return l; }
+  function fill(id, items) { var u = document.getElementById(id); u.replaceChildren.apply(u, items); }
+  function render() {
+    var a = Math.max(0, parseFloat(amt.value) || 0);
+    var p = parseInt(pct.value, 10) / 100;
+    var tok = document.querySelector('input[name="c-tok"]:checked').value;
+    var sym = tok === 'own' ? ((own.value || 'YOURS').trim().toUpperCase() || 'YOURS') : tok;
+    own.hidden = tok !== 'own';
+    unit.textContent = sym;
+    pctOut.textContent = Math.round(p * 100) + '%';
+    var agent = a * p, person = a - agent;
+    var chain = tok === 'own' ? 'its own chain' : CHAIN[tok];
+    var bank = document.getElementById('o-bank'), b = [];
+    if (tok === 'USDC') {
+      bank.textContent = 'You pay ' + fmt(a * 1.09) + ' ' + sym;
+      b.push(li('no', fmt(a * 0.09) + ' ' + sym + ' platform fee'));
+    } else {
+      bank.textContent = "Can't pay in " + sym;
+      b.push(li('no', 'Pays out in fiat to bank accounts'));
+    }
+    b.push(p > 0 ? li('no', "The agent's " + fmt(agent) + ' goes unpaid: it has no bank account') : li('ok', 'The person is paid'));
+    b.push(li('no', 'Recipients sign up and add a bank first'));
+    fill('o-bank-list', b);
+    document.getElementById('o-labr').textContent = 'You pay ' + fmt(a) + ' ' + sym;
+    var l = [li('ok', 'Person gets ' + fmt(person) + ' ' + sym)];
+    if (p > 0) l.push(li('ok', 'Agent gets ' + fmt(agent) + ' ' + sym));
+    l.push(li('ok', 'Paid by handle on ' + chain + ', no fee in early access'));
+    l.push(li('ok', 'Public receipt in #payouts'));
+    fill('o-labr-list', l);
+  }
+  [amt, pct, own].forEach(function (el) { el.addEventListener('input', render); });
+  document.querySelectorAll('input[name="c-tok"]').forEach(function (r) { r.addEventListener('change', render); });
+  render();
+})();
 (function () {
   var d = document.getElementById('add-labr');
   if (!d || typeof d.showModal !== 'function') return;
