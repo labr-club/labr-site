@@ -394,7 +394,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
           </div>
           <div class="opt-col">
             <small>Task platform paying through banks</small>
-            <b class="big" id="o-bank">You pay 817.50 USDC</b>
+            <b class="big" id="o-bank">You pay $817.50</b>
             <ul id="o-bank-list"></ul>
           </div>
           <div class="opt-col us">
@@ -570,13 +570,13 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
     var chain = tok === 'own' ? 'its own chain' : CHAIN[tok];
     var bank = document.getElementById('o-bank'), b = [];
     if (tok === 'USDC') {
-      bank.textContent = 'You pay ' + fmt(a * 1.09) + ' ' + sym;
-      b.push(li('no', fmt(a * 0.09) + ' ' + sym + ' platform fee'));
+      bank.textContent = 'You pay $' + fmt(a * 1.09);
+      b.push(li('no', '$' + fmt(a * 0.09) + ' platform fee'));
     } else {
       bank.textContent = "Can't pay in " + sym;
       b.push(li('no', 'Pays out in fiat to bank accounts'));
     }
-    b.push(p > 0 ? li('no', "The agent's " + fmt(agent) + ' goes unpaid: it has no bank account') : li('ok', 'The person is paid'));
+    b.push(p > 0 ? li('no', "The agent's " + (tok === 'USDC' ? '$' + fmt(agent) : fmt(agent) + ' ' + sym) + ' goes unpaid: it has no bank account') : li('ok', 'The person is paid'));
     b.push(li('no', 'Recipients sign up and add a bank first'));
     fill('o-bank-list', b);
     document.getElementById('o-labr').textContent = 'You pay ' + fmt(a) + ' ' + sym;
