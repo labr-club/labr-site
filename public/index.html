@@ -307,8 +307,8 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
         <button class="btn btn-outline-dark" type="button" data-open="add-labr" aria-haspopup="dialog">Add Labr to your project</button>
       </div>
 
-      <div class="window" role="img" aria-label="Labr in Discord: jules posts a 500 USDC bug fix for trusted contributors and kai adds 250 USDC. mira fixes it and kai's bot load-tests it. Labr checks the merge, vets both contributors and proposes a 600/150 split for jules to approve.">
-        <div class="titlebar"><i></i><i></i><i></i><span class="tb-label">Preview</span></div>
+      <div class="window" role="img" aria-label="Preview of the task flow in development. Labr in Discord: jules posts a 500 USDC bug fix for trusted contributors and kai adds 250 USDC. mira fixes it and kai's bot load-tests it. Labr checks the merge, vets both contributors and proposes a 600/150 split for jules to approve.">
+        <div class="titlebar"><i></i><i></i><i></i><span class="tb-label">Preview: task flow in development</span></div>
         <div class="app">
           <div class="rail" aria-hidden="true">
             <div class="srv">Q</div><div class="srv on">OS</div><div class="srv">DS</div><div class="srv">+</div>
@@ -424,15 +424,16 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
     <div class="wrap">
       <div class="row">
         <div class="text">
-          <span class="eyebrow">Tasks</span>
+          <span class="eyebrow">Tasks · in preview</span>
           <h2>Turn requests into paid contributions</h2>
           <p>Post a task and choose who can claim it. Rewards are multiplayer: anyone can chip in, and the payout splits across everyone who worked on it.</p>
+          <p class="chains">Live today: pay anyone by handle, check reputation before sending, and split a reward across merged pull requests. Task posting and pooled rewards are next.</p>
         </div>
         <div class="panel">
-          <div class="panel-title"><span>Open tasks</span><span>#contributors</span></div>
+          <div class="panel-title"><span>Open tasks</span><span>#tasks</span></div>
           <div class="list">
-            <div class="item"><span>SDK WebSocket support</span><b class="amt">1,500 USDC</b><span class="chip open">Open</span></div>
-            <div class="item"><span>Translate docs to Spanish</span><b class="amt">120 USDC</b><span class="chip open">Claimed</span></div>
+            <div class="item"><span>SDK WebSocket support</span><b class="amt">40,000 OSC</b><span class="chip open">Open</span></div>
+            <div class="item"><span>Translate docs to Spanish</span><b class="amt">0.05 ETH</b><span class="chip open">Claimed</span></div>
             <div class="item"><span>Fix memory leak in the indexer</span><b class="amt">750 USDC</b><span class="chip paid">Paid</span></div>
           </div>
         </div>
@@ -467,7 +468,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
             <div class="result">
               <div class="kv"><span>profile</span><b>GitHub 7y · X 5y · LinkedIn</b></div>
               <div class="kv"><span>trust</span><b>High</b></div>
-              <div class="kv"><span>sent</span><b>400.00 USDC · Base</b></div>
+              <div class="kv"><span>sent</span><b>12,000 OSC · Base</b></div>
             </div>
           </div>
         </div>
@@ -477,18 +478,18 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
         <div class="text">
           <span class="eyebrow">Records</span>
           <h2>See who did what</h2>
-          <p>Every payout settles onchain and is logged with the task, who funded it, who did it and the amount.</p>
+          <p>Every payout settles onchain and is posted to #payouts with who paid, who was paid and the amount.</p>
           <p class="chains">Base, Ethereum, Solana, Arbitrum, Optimism, Polygon, Avalanche, World Chain, Arc, Monad and Robinhood Chain.</p>
         </div>
         <div class="panel">
-          <div class="panel-title"><span>Payout log</span><span>This month</span></div>
+          <div class="panel-title"><span>Payout log</span><span>Example</span></div>
           <div class="scroll">
             <table class="ledger">
               <thead><tr><th>Task</th><th>To</th><th class="num">Amount</th></tr></thead>
               <tbody>
                 <tr><td>Indexer memory leak</td><td>@mira, kai's bot</td><td class="num">750 USDC<small>Base</small></td></tr>
-                <tr><td>Auth bug fix #212</td><td>github:kenji-dev</td><td class="num">400 USDC<small>Base</small></td></tr>
-                <tr><td>Event recap thread</td><td>x:@ana_builds</td><td class="num">15 USDC<small>Solana</small></td></tr>
+                <tr><td>Auth bug fix #212</td><td>github:kenji-dev</td><td class="num">12,000 OSC<small>Base</small></td></tr>
+                <tr><td>Event recap thread</td><td>x:@ana_builds</td><td class="num">0.1 SOL<small>Solana</small></td></tr>
               </tbody>
             </table>
           </div>
@@ -528,7 +529,7 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
     <header>
       <div>
         <h2 id="add-labr-title">Add Labr to your project</h2>
-        <p>Labr runs as an open-source bot on your own keys. Pick where your project lives.</p>
+        <p>Labr runs on open-source bots you host on your own keys: DiscoCentaur for Discord, TeleCentaur for Telegram.</p>
       </div>
       <button class="x" type="button" data-close aria-label="Close">&times;</button>
     </header>
