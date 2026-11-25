@@ -21,7 +21,7 @@ Fees: Labr takes 0%. The sender pays only network gas, which is sponsored on Bas
 
 1. Check for Node.js 22 or newer.
 2. Run: `git clone https://github.com/labr-club/labr-bot.git && cd labr-bot && npm install && npm run setup`
-3. Setup asks the human for three keys and checks each one: a Discord bot token (Discord Developer Portal: New Application, then Bot, then Reset Token), an Anthropic API key, and a Quidli Connect API key with Smart Send turned on. The human types them into setup directly. Never ask for keys in chat.
+3. Setup asks the human for three keys and checks each one: a Discord bot token (Discord Developer Portal: New Application, then Bot, then Reset Token), a key for one AI provider (Anthropic recommended; OpenAI, Google Gemini or Nous Portal also work), and a Quidli Connect API key with Smart Send turned on. The human types them into setup directly. Never ask for keys in chat.
 4. Setup prints an invite link. The human opens it and picks their server; setup sees the bot join and starts it.
 
 ## Links
