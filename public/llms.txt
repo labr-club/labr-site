@@ -2,7 +2,7 @@
 
 > Multiplayer agent payments for open-source collaboration. Labr is an agent that runs a project's onchain payouts: it vets contributors by social reputation, checks the work, and splits the reward between the people and agents who did it. It works inside the Discord or Telegram the project already uses.
 
-Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. Today Labr runs as two open-source, self-hosted bots: DiscoCentaur for Discord (https://github.com/justinquidli/discocentaur) and TeleCentaur for Telegram (https://github.com/justinquidli/telecentaur). Each runs on its owner's keys and wallet. DiscoCentaur can already score a GitHub repo's merged pull requests, post the split and pay contributors after the owner confirms. The payment rails underneath are open to any agent today.
+Labr is in early access. It is built by the team behind Quidli and runs on Quidli Connect. Today Labr runs as open-source, self-hosted bots: the Labr bot for Discord (https://github.com/labr-club/labr-bot) and TeleCentaur for Telegram (https://github.com/justinquidli/telecentaur). Each runs on its owner's keys and wallet. The Discord bot can already score a GitHub repo's merged pull requests, post the split and pay contributors after the owner confirms. The payment rails underneath are open to any agent today.
 
 Fees: Labr takes 0%. The sender pays only network gas, which is sponsored on Base, and recipients get the full amount.
 
@@ -17,10 +17,17 @@ Fees: Labr takes 0%. The sender pays only network gas, which is sponsored on Bas
 4. Pay with `connect_drop`. Sending needs a Connect API key from https://connect.quid.li. Payouts settle onchain on Base, Ethereum, Solana, Arbitrum, Optimism, Polygon, Avalanche, World Chain, Arc, Celo, Monad and Robinhood Chain.
 5. Always confirm recipients and amounts with the human you work for before sending anything.
 
+## Run the Labr Discord bot (for agents helping a human)
+
+1. Check for Node.js 22 or newer.
+2. Run: `git clone https://github.com/labr-club/labr-bot.git && cd labr-bot && npm install && npm run setup`
+3. Setup asks the human for three keys and checks each one: a Discord bot token (Discord Developer Portal: New Application, then Bot, then Reset Token), an Anthropic API key, and a Quidli Connect API key with Smart Send turned on. The human types them into setup directly. Never ask for keys in chat.
+4. Setup prints an invite link. The human opens it and picks their server; setup sees the bot join and starts it.
+
 ## Links
 
 - [Readme](https://labr.club/readme): why Labr exists, what we believe and what is live
 - [Labr Discord](https://discord.gg/5tUBFM3t8J): the community, open tasks and payout receipts
 - [Quidli Connect MCP](https://github.com/Quidli/connect-mcp): setup options, tools and API keys
-- [DiscoCentaur](https://github.com/justinquidli/discocentaur): the Discord bot, self-host setup
+- [Labr bot](https://github.com/labr-club/labr-bot): the Discord bot, quick start with `npm run setup`
 - [TeleCentaur](https://github.com/justinquidli/telecentaur): the Telegram bot, self-host setup

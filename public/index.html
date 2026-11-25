@@ -257,7 +257,7 @@ footer nav a:hover{color:var(--white)}
 /* add-labr picker */
 button.btn{font-family:inherit;cursor:pointer}
 button.btn-outline-dark,button.btn-outline-light{background:transparent}
-dialog.picker{border:0;border-radius:16px;padding:0;width:min(440px, calc(100% - 32px));background:var(--white);color:var(--ink);box-shadow:0 24px 60px rgba(10,12,46,.35)}
+dialog.picker{border:0;border-radius:16px;padding:0;width:min(480px, calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;background:var(--white);color:var(--ink);box-shadow:0 24px 60px rgba(10,12,46,.35)}
 dialog.picker::backdrop{background:rgba(10,12,46,.62)}
 .picker .inner{padding:24px;display:grid;gap:16px}
 .picker header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
@@ -275,6 +275,25 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
 .picker .opt .ico i{display:block;width:22px;height:22px;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
 .picker .opt .ico.dc{background:#5865F2;--m:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/discord.svg)}
 .picker .opt .ico.tg{background:#26A5E4;--m:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/telegram.svg)}
+button.opt{width:100%;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.picker .step{display:grid;gap:12px}
+.picker .step[hidden]{display:none}
+.picker h3{font-size:17px;font-weight:700}
+.picker .steps-count{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:0 0 4px}
+.picker .todo{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px}
+.picker .note{font-size:14px;color:var(--muted)}
+.picker code{font-family:var(--mono);font-size:13px;background:var(--wash);border:1px solid var(--edge);border-radius:4px;padding:1px 5px}
+.picker .btn-block{justify-content:center}
+.picker .cmd{background:var(--navy);border-radius:10px;padding:10px 16px 14px}
+.picker .cmd-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.picker .cmd-bar span{font-size:12px;color:#8E95C7}
+.picker .cmd pre{margin:0;font-family:var(--mono);font-size:13px;line-height:1.6;color:#DDE2FF;white-space:pre;overflow-x:auto}
+.picker h3:focus{outline:none}
+.picker .inner,.picker .step{grid-template-columns:minmax(0,1fr)}
+.picker .step-nav{display:flex;justify-content:space-between;gap:12px;padding-top:4px}
+.btn-ghost{background:none;border-color:var(--edge);color:var(--ink);cursor:pointer;font-family:inherit}
+.btn-ghost:hover{border-color:var(--blue)}
+.picker .step-nav .btn-primary{border:0;cursor:pointer;font-family:inherit}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 </head>
@@ -528,13 +547,60 @@ dialog.picker::backdrop{background:rgba(10,12,46,.62)}
   <div class="inner">
     <header>
       <div>
+        <p class="steps-count" id="add-labr-count" hidden></p>
         <h2 id="add-labr-title">Add Labr to your project</h2>
-        <p>Labr runs on open-source bots you host on your own keys: DiscoCentaur for Discord, TeleCentaur for Telegram.</p>
       </div>
       <button class="x" type="button" data-close aria-label="Close">&times;</button>
     </header>
-    <a class="opt" href="https://github.com/justinquidli/discocentaur#setup" target="_blank" rel="noopener"><span class="ico dc" aria-hidden="true"><i></i></span><div><strong>Discord</strong><span>Set up the Discord bot</span></div><b>Setup guide &rarr;</b></a>
-    <a class="opt" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener"><span class="ico tg" aria-hidden="true"><i></i></span><div><strong>Telegram</strong><span>Set up the Telegram bot</span></div><b>Setup guide &rarr;</b></a>
+
+    <section class="step" data-step="0">
+      <p>Labr runs as an open-source bot on your own keys and wallet. Setup takes about 5 minutes.</p>
+      <button class="opt" type="button" data-go="1"><span class="ico dc" aria-hidden="true"><i></i></span><div><strong>Discord</strong><span>Guided setup, step by step</span></div><b>Start &rarr;</b></button>
+      <a class="opt" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener"><span class="ico tg" aria-hidden="true"><i></i></span><div><strong>Telegram</strong><span>Set up the Telegram bot</span></div><b>Setup guide &rarr;</b></a>
+    </section>
+
+    <section class="step" data-step="1" hidden>
+      <h3>Create your bot</h3>
+      <ol class="todo">
+        <li>Open the Discord Developer Portal and click <b>New Application</b>. Any name works.</li>
+        <li>Go to <b>Bot</b>, click <b>Reset Token</b> and copy the token.</li>
+      </ol>
+      <a class="btn btn-primary btn-block" href="https://discord.com/developers/applications" target="_blank" rel="noopener">Open the Developer Portal</a>
+      <p class="note">Keep the token for step 3. Never paste a token or key on this site.</p>
+    </section>
+
+    <section class="step" data-step="2" hidden>
+      <h3>Get two keys</h3>
+      <a class="opt" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener"><div><strong>Anthropic API key</strong><span>Runs the agent</span></div><b>Get key &rarr;</b></a>
+      <a class="opt" href="https://connect.quid.li" target="_blank" rel="noopener"><div><strong>Quidli Connect API key</strong><span>Pays people by handle. Turn on Smart Send while you are there.</span></div><b>Get key &rarr;</b></a>
+      <p class="note">Keep both for the next step.</p>
+    </section>
+
+    <section class="step" data-step="3" hidden>
+      <h3>Run setup</h3>
+      <p>In a terminal, with <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js 22</a> or newer:</p>
+      <div class="cmd"><div class="cmd-bar"><span>Terminal</span><button class="copy" type="button" data-copy="setup-cmd">Copy</button></div><pre id="setup-cmd">git clone https://github.com/labr-club/labr-bot.git
+cd labr-bot
+npm install
+npm run setup</pre></div>
+      <p class="note">Paste the token and keys when asked. Setup checks each one, turns on the bot's permissions and prints an invite link. Your keys stay on your machine.</p>
+    </section>
+
+    <section class="step" data-step="4" hidden>
+      <h3>Add it to your server</h3>
+      <ol class="todo">
+        <li>Open the invite link setup printed and pick your server.</li>
+        <li>Setup sees the bot join and starts Labr.</li>
+        <li>In your server, say <code>@yourbot help</code>.</li>
+      </ol>
+      <p class="note">Everyone pays from their own wallet: each member DMs the bot <code>!connect &lt;their Connect key&gt;</code> once. Create a <code>#payouts</code> channel and every payment is posted there.</p>
+      <a class="opt" href="https://discord.gg/5tUBFM3t8J" target="_blank" rel="noopener"><div><strong>Stuck?</strong><span>Ask in the Labr Discord</span></div><b>Join &rarr;</b></a>
+    </section>
+
+    <nav class="step-nav" id="add-labr-nav" hidden>
+      <button class="btn btn-ghost" type="button" data-back>Back</button>
+      <button class="btn btn-primary" type="button" data-next>Next</button>
+    </nav>
   </div>
 </dialog>
 
@@ -593,9 +659,30 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
 (function () {
   var d = document.getElementById('add-labr');
   if (!d || typeof d.showModal !== 'function') return;
+  var LAST = 4, KEY = 'labr-setup-step', step = 0;
+  var steps = d.querySelectorAll('.step'), nav = document.getElementById('add-labr-nav');
+  var count = document.getElementById('add-labr-count'), next = d.querySelector('[data-next]');
+  function save(n) { try { localStorage.setItem(KEY, String(n)); } catch (e) {} }
+  function load() { try { var n = parseInt(localStorage.getItem(KEY), 10); return n >= 0 && n <= LAST ? n : 0; } catch (e) { return 0; } }
+  function show(n) {
+    step = n;
+    steps.forEach(function (s) { s.hidden = Number(s.getAttribute('data-step')) !== n; });
+    nav.hidden = n === 0;
+    count.hidden = n === 0;
+    count.textContent = 'Step ' + n + ' of ' + LAST;
+    next.textContent = n === LAST ? 'Done' : 'Next';
+    save(n === LAST ? 0 : n);
+    var h = d.querySelector('.step:not([hidden]) h3');
+    if (h) { h.setAttribute('tabindex', '-1'); h.focus(); }
+  }
   document.querySelectorAll('[data-open="add-labr"]').forEach(function (b) {
-    b.addEventListener('click', function () { d.showModal(); });
+    b.addEventListener('click', function () { show(load()); d.showModal(); });
   });
+  d.querySelectorAll('[data-go]').forEach(function (b) {
+    b.addEventListener('click', function () { show(Number(b.getAttribute('data-go'))); });
+  });
+  d.querySelector('[data-back]').addEventListener('click', function () { show(Math.max(0, step - 1)); });
+  next.addEventListener('click', function () { if (step === LAST) { save(0); d.close(); } else show(step + 1); });
   d.querySelector('[data-close]').addEventListener('click', function () { d.close(); });
   d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
 })();
