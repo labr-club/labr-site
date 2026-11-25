@@ -280,6 +280,7 @@ button.opt{width:100%;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .picker .step[hidden]{display:none}
 .picker h3{font-size:17px;font-weight:700}
 .picker .steps-count{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin:0 0 4px}
+.picker .need{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px}
 .picker .todo{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px}
 .picker .note{font-size:14px;color:var(--muted)}
 .picker code{font-family:var(--mono);font-size:13px;background:var(--wash);border:1px solid var(--edge);border-radius:4px;padding:1px 5px}
@@ -554,39 +555,33 @@ button.opt{width:100%;font:inherit;color:inherit;text-align:left;cursor:pointer}
     </header>
 
     <section class="step" data-step="0">
-      <p>Labr runs as an open-source bot on your own keys and wallet. Setup takes about 5 minutes.</p>
+      <p>Labr runs as an open-source bot on your own keys and wallet. Setup takes about 5 minutes, in three steps.</p>
       <button class="opt" type="button" data-go="1"><span class="ico dc" aria-hidden="true"><i></i></span><div><strong>Discord</strong><span>Guided setup, step by step</span></div><b>Start &rarr;</b></button>
       <a class="opt" href="https://github.com/justinquidli/telecentaur#setup" target="_blank" rel="noopener"><span class="ico tg" aria-hidden="true"><i></i></span><div><strong>Telegram</strong><span>Set up the Telegram bot</span></div><b>Setup guide &rarr;</b></a>
     </section>
 
     <section class="step" data-step="1" hidden>
-      <h3>Create your bot</h3>
-      <ol class="todo">
-        <li>Open the Discord Developer Portal and click <b>New Application</b>. Any name works.</li>
-        <li>Go to <b>Bot</b>, click <b>Reset Token</b> and copy the token.</li>
-      </ol>
-      <a class="btn btn-primary btn-block" href="https://discord.com/developers/applications" target="_blank" rel="noopener">Open the Developer Portal</a>
-      <p class="note">Keep the token for step 3. Never paste a token or key on this site.</p>
+      <h3>What you'll need</h3>
+      <ul class="need">
+        <li><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js 22</a> or newer on your computer</li>
+        <li>A <a href="https://discord.com/developers/applications" target="_blank" rel="noopener">Discord</a> account that can add bots to your server</li>
+        <li>An <a href="https://console.anthropic.com" target="_blank" rel="noopener">Anthropic</a> account, for the agent</li>
+        <li>A <a href="https://connect.quid.li" target="_blank" rel="noopener">Quidli Connect</a> account, to pay people by handle</li>
+      </ul>
+      <p class="note">No keys yet. Setup asks for each one when it needs it and shows you where to get it.</p>
     </section>
 
     <section class="step" data-step="2" hidden>
-      <h3>Get two keys</h3>
-      <a class="opt" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener"><div><strong>Anthropic API key</strong><span>Runs the agent</span></div><b>Get key &rarr;</b></a>
-      <a class="opt" href="https://connect.quid.li" target="_blank" rel="noopener"><div><strong>Quidli Connect API key</strong><span>Pays people by handle. Turn on Smart Send while you are there.</span></div><b>Get key &rarr;</b></a>
-      <p class="note">Keep both for the next step.</p>
-    </section>
-
-    <section class="step" data-step="3" hidden>
       <h3>Run setup</h3>
-      <p>In a terminal, with <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js 22</a> or newer:</p>
+      <p>In a terminal:</p>
       <div class="cmd"><div class="cmd-bar"><span>Terminal</span><button class="copy" type="button" data-copy="setup-cmd">Copy</button></div><pre id="setup-cmd">git clone https://github.com/labr-club/labr-bot.git
 cd labr-bot
 npm install
 npm run setup</pre></div>
-      <p class="note">Paste the token and keys when asked. Setup checks each one, turns on the bot's permissions and prints an invite link. Your keys stay on your machine.</p>
+      <p class="note">Setup walks you through it one key at a time: your Discord bot token, then the Anthropic key, then the Connect key. It checks each one and turns on the bot's permissions. Keys stay on your machine, never on this site.</p>
     </section>
 
-    <section class="step" data-step="4" hidden>
+    <section class="step" data-step="3" hidden>
       <h3>Add it to your server</h3>
       <ol class="todo">
         <li>Open the invite link setup printed and pick your server.</li>
@@ -659,7 +654,7 @@ document.querySelectorAll('[data-copy]').forEach(function (b) {
 (function () {
   var d = document.getElementById('add-labr');
   if (!d || typeof d.showModal !== 'function') return;
-  var LAST = 4, KEY = 'labr-setup-step', step = 0;
+  var LAST = 3, KEY = 'labr-setup-step', step = 0;
   var steps = d.querySelectorAll('.step'), nav = document.getElementById('add-labr-nav');
   var count = document.getElementById('add-labr-count'), next = d.querySelector('[data-next]');
   function save(n) { try { localStorage.setItem(KEY, String(n)); } catch (e) {} }
