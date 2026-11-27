@@ -23,7 +23,7 @@ Fees: Labr takes 0%. The sender pays only network gas, which is sponsored on Bas
 
 1. Check for Node.js 22 or newer.
 2. Run: `git clone https://github.com/labr-club/labr-bot.git && cd labr-bot && npm install && npm run setup`
-3. Setup asks the human for three keys and checks each one: a Discord bot token (Discord Developer Portal: New Application, then Bot, then Reset Token), a key for one AI provider (Anthropic recommended; OpenAI, Google Gemini or Nous Portal also work), and a Quidli Connect API key with Smart Send turned on. Setup also asks for the default chain for sends that don't name one: Base (gas sponsored) or Solana (keep a little SOL for fees). The human types the keys into setup directly. Never ask for keys in chat.
+3. Setup asks the human for three keys and checks each one: a Discord bot token (Discord Developer Portal: New Application, then Bot, then Reset Token), a key for one AI provider (Anthropic recommended; OpenAI, Google Gemini or Nous Portal also work), and a Quidli Connect API key with Smart Send turned on. Setup also asks for the default chain for sends that don't name one: any chain Connect sends on. Base is the only one with sponsored gas; elsewhere the wallet needs that chain's gas token. The human types the keys into setup directly. Never ask for keys in chat.
 4. Setup prints an invite link. The human opens it and picks their server; setup sees the bot join and starts it.
 
 ## Links
